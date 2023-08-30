@@ -7,10 +7,10 @@ const CartButton = () => {
   return (
     <div>
       {/* <Nav.Link as={Link} to="/cart" className="cart__box"> */}
-        <Badge id="badge" color="white" size="32px">
-          0
-        </Badge>
-        <AiOutlineShoppingCart color="white" size={32} />
+      <Badge id="badge" color="white" size="24px">
+        0
+      </Badge>
+      <AiOutlineShoppingCart color="white" size={24} />
       {/* </Nav.Link> */}
     </div>
   );

@@ -15,7 +15,7 @@ const TopNav = () => {
   });
 
   const openSideNavHandler = () => {
-    //console.log("openSideNav in MainHeader.js clicked");
+    console.log("openSideNav in MainHeader.js clicked");
     let currentWidth = "300px";
     if (screenwidth !== null && screenwidth < 450) {
       //   currentWidth = "100vw";
@@ -42,6 +42,7 @@ const TopNav = () => {
   return (
     <div className="navbar fixed-top px-3 py-2">
       <div className="nav-item">
+        <SideNav sidebar={opensidebar} onCloseSideNav={closeSideNavHandler} />
         <GiHamburgerMenu
           size="32px"
           className="hamburger"
