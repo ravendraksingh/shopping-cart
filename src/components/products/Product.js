@@ -1,14 +1,15 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import { BiSolidStar } from "react-icons";
-import RatingStars from "./RatingStars";
+import RatingStars from "../UI/RatingStars";
 
 const Product = ({ product }) => {
   console.log(product);
   return (
     // <Card className="product__card col-12 col-sm-6 col-md-4">
     <Card className="product__card">
-      <Card.Img src={product.thumbnail} className="product__img" />
+      <a href={"/" + product.id}>
+        <Card.Img src={product.thumbnail} className="product__img" />
+      </a>
       <Card.Body>
         <Row>
           <Col className="px-0 py-0">{product.title}</Col>

@@ -1,12 +1,15 @@
 import "./App.css";
-import Content from "./components/Content";
-import Header from "./components/Header";
+import Content from "./components/main/Content";
+import TopNav from "./components/menu/TopNav";
+import BottomNav from "./components/menu/BottomNav";
+
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <TopNav />
       <Content />
+      <BottomNav />
     </div>
   );
 }
