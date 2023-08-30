@@ -1,14 +1,15 @@
 import "./App.css";
-import Content from "./components/main/Content";
 import TopNav from "./components/menu/TopNav";
 import BottomNav from "./components/menu/BottomNav";
-
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./components/AppRoutes";
+import { Fragment } from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container p-0">
       <TopNav />
-      <Content />
+      <AppRoutes />
       <BottomNav />
     </div>
   );

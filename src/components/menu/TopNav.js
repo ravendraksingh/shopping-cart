@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import CartButton from "../UI/CartButton";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineHome } from "react-icons/ai";
 import SideNav from "./SideNav";
 import useWindowDimensions from "../../utils/ScreenUtil";
 import "./nav.css";
@@ -40,7 +38,8 @@ const TopNav = () => {
   };
 
   return (
-    <div className="navbar fixed-top px-3 py-2">
+    // <div className="navbar fixed-top px-3 py-2">
+    <div className="navbar px-3 py-2">
       <div className="nav-item">
         <SideNav sidebar={opensidebar} onCloseSideNav={closeSideNavHandler} />
         <GiHamburgerMenu

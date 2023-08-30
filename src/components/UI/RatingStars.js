@@ -5,8 +5,11 @@ const RatingStars = ({ rating }) => {
     <>
       {Array(Math.floor(rating))
         .fill()
-        .map(() => (
-          <span className="fa fa-star yellow__star"></span>
+        .map((index) => (
+          <span
+            className="fa fa-star yellow__star"
+            key={Math.random() + "#$" + Math.random().toString()}
+          ></span>
         ))}
     </>
   );
