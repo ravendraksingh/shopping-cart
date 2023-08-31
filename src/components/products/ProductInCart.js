@@ -1,7 +1,13 @@
 import React, { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import "../styles.css";
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import {
+  //   AiOutlinePlusCircle,
+  //   AiOutlineMinusCircle,
+  AiOutlineMinusSquare,
+  AiOutlinePlusSquare,
+} from "react-icons/ai";
+import { Row, Col } from "react-bootstrap";
 
 const ProductInCart = ({ product }) => {
   const cartCtx = useContext(CartContext);
@@ -16,7 +22,7 @@ const ProductInCart = ({ product }) => {
   };
 
   return (
-    <div className="d-flex mb-3 px-5 pt-5 w-100 justify-content-between prod__incart">
+    <div className="d-flex prod__incart">
       <div>
         <img
           src={product.thumbnail}
@@ -24,13 +30,17 @@ const ProductInCart = ({ product }) => {
           className="cart__img"
         />
       </div>
-      <div className="d-flex flex-column justify-content-between p-2">
-        <div>
-          <span className="px-0 py-0">{product.title}</span>
-          <p className="px-0 py-0">{"$" + product.price}</p>
+      <div className="ps-2">
+        <div className="mb-2">
+          {product.description}
         </div>
         <div>
-          <AiOutlineMinusCircle size={22} /><span className="px-2">1</span><AiOutlinePlusCircle size={22} />
+          <span className="px-0 py-0">{"$" + product.price}</span>
+          <span className="cart__tool float-end">
+            <span className="ps-1 pe-2">-</span>
+            <span className="">4</span>
+            <span className="ps-2 pe-1">+</span>
+          </span>
         </div>
       </div>
     </div>

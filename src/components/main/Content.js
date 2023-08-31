@@ -11,7 +11,7 @@ const Content = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://dummyjson.com/products?limit=5");
+      const response = await fetch("https://dummyjson.com/products?limit=30");
       if (response) {
         const data = await response.json();
         // console.log(data.products);
@@ -27,7 +27,7 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="product__grid-container mt-5">
+    <div className="product__grid-container mt-1">
       {products &&
         products.length > 0 &&
         products.map((p, index) => (

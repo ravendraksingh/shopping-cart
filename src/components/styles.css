@@ -43,11 +43,19 @@
 .cart__img {
   width: 6em;
   height: 6em;
-  border-radius: 3em;
+  border-radius: 1em;
 }
 .prod__incart {
-    width: 90%;
+  padding-top: 1em;  
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+.cart__tool {
   border: 1px solid rgb(220, 220, 220);
+  padding: 2px 6px;
+  background-color: #0d7c0d;
+  color: #fff;
+  border-radius: 4px;
 }
 
 @media only screen and (min-width: 576px) {

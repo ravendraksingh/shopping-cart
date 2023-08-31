@@ -14,7 +14,9 @@ const BottomNav = () => {
   return (
     <div className="navbar fixed-bottom px-3 py-2">
       <div className="nav-item">
-        <AiOutlineHome color="white" size="24" />
+        <Link to="/">
+          <AiOutlineHome color="white" size="24" />
+        </Link>
       </div>
       <div className="nav-item">
         <Link to="/cart">

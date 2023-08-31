@@ -6,7 +6,7 @@ const Cart = () => {
   const cartCtx = useContext(CartContext);
   console.log("cartCtx", cartCtx);
 
-//   const { cart } = cartCtx;
+  //   const { cart } = cartCtx;
   const cart = [
     {
       id: 2,
@@ -65,7 +65,7 @@ const Cart = () => {
   console.log(JSON.stringify(cart));
 
   return (
-    <div className="container">
+    <div className="container mt-1">
       {cart &&
         cart?.length > 0 &&
         cart.map((item, index) => (
