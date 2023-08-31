@@ -39,7 +39,7 @@ const ProductInCart = ({ product }) => {
         <div className="mb-2">{product.description}</div>
         <div>
           <span className="px-0 py-0">{"$" + product.price}</span>
-          <span className="cart__tool float-end">
+          <span className="cart__tool float-end me-3">
             <span className="ps-1 pe-2" onClick={removeFromCart}>
               -
             </span>
