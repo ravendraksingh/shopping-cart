@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Card } from "react-bootstrap";
 import CartContext from "../../context/CartContext";
 import RatingStars from "../UI/RatingStars";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const cartCtx = useContext(CartContext);
@@ -19,9 +20,9 @@ const Product = ({ product }) => {
     // <Card className="product__card col-12 col-sm-6 col-md-4">
     <Card className="product__card">
       <Card.Body className="p-0">
-        <a href={"/products/" + product.id}>
+        <Link to={"/products/" + product.id}>
           <img src={product.thumbnail} className="product__img" />
-        </a>
+        </Link>
         <div className="d-flex justify-content-between px-0 py-2">
           <span className="mb-0">{product.title}</span>
           <div>
