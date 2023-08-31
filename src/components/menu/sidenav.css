@@ -27,11 +27,7 @@
 }
 
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
   font-size: 36px;
-  margin-left: 50px;
   color: white;
   text-decoration: none;
 }
@@ -46,6 +42,23 @@
   align-items: center;
   background-color: yellowgreen;
 }
+
+.sidenav__btn,
+.sidenav__btn::before,
+.sidenav::after {
+  background-color: #0a66c2 !important;
+  border-color: #0a66c2 !important;
+}
+
+.offcanvas {
+  max-width: 60% !important;
+  background-color: #0a66c2 !important;
+  color: #fff;
+}
+.offcanvas a {
+  color: #fff !important;
+}
+
 /* @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

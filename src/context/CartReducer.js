@@ -12,6 +12,14 @@ const CartReducer = (cart, action) => {
         newCart = [...cart, { ...action.item }];
       }
       return newCart;
+    case "REMOVE_ITEM":
+      if (cart === null || cart.length === 0) {
+      } else {
+        newCart = [...cart];
+        const productIndex = newCart.findIndex((c) => c.id === action.item.id);
+        newCart.splice(productIndex, 1);
+      }
+      return newCart;
     default:
       throw new Error(`Unknown action type: ${action.type}`);
   }

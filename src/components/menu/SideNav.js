@@ -15,6 +15,10 @@ const SideNav = (props) => {
     setSidebar(props.sidebar);
   }, [props.sidebar]);
 
+  const mouseOutHandler = () => {
+    console.log("mouseOutHandler");
+  };
+
   return (
     <Fragment>
       {/* <AiIcons.AiOutlineClose onClick={showSidebar} className="navicon" /> */}
@@ -24,8 +28,9 @@ const SideNav = (props) => {
           width: sidebar.width ?? "0px",
           height: sidebar.height ?? "0px",
         }}
+        onMouseOut={mouseOutHandler}
       >
-        <div>
+        <div className="text-end">
           <button className="btn btn-link closebtn" onClick={closeNav}>
             &times;
           </button>

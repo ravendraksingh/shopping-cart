@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import SideNav from "./SideNav";
 import useWindowDimensions from "../../utils/ScreenUtil";
 import "./nav.css";
+import NewSideNav from "./NewSideNav";
 
 const TopNav = () => {
   const { width: screenwidth } = useWindowDimensions();
@@ -40,7 +41,7 @@ const TopNav = () => {
   return (
     // <div className="navbar fixed-top px-3 py-2">
     <div className="navbar px-3 py-2">
-      <div className="nav-item">
+      {/* <div className="nav-item">
         <SideNav sidebar={opensidebar} onCloseSideNav={closeSideNavHandler} />
         <GiHamburgerMenu
           size="32px"
@@ -48,7 +49,8 @@ const TopNav = () => {
           onClick={openSideNavHandler}
           color="white"
         />
-      </div>
+      </div> */}
+      <NewSideNav />
       <div className="nav-item d-flex flex-grow-1">
         <form className="d-flex flex-grow-1">
           <input
