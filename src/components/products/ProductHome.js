@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
-import Product from "../products/Product";
+import Product from "./Product";
 
 import "../styles.css";
 
-const Content = () => {
+const ProductHome = () => {
   const [products, setProducts] = useState([]);
   const cartCtx = useContext(CartContext);
   console.log("cartCtx", cartCtx);
@@ -27,7 +27,7 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="product__grid-container mt-1">
+    <div className="product__grid-container">
       {products &&
         products.length > 0 &&
         products.map((p, index) => (
@@ -37,4 +37,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default ProductHome;

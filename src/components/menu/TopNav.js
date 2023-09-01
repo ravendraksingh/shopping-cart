@@ -40,7 +40,7 @@ const TopNav = () => {
 
   return (
     // <div className="navbar fixed-top px-3 py-2">
-    <div className="navbar px-3 py-2">
+    <div id="idtopnav" className="navbar px-3 py-2">
       {/* <div className="nav-item">
         <SideNav sidebar={opensidebar} onCloseSideNav={closeSideNavHandler} />
         <GiHamburgerMenu

@@ -27,7 +27,7 @@ const ProductDetails = () => {
   return (
     <div className="container mt-1 fs-4">
       <img src={product.thumbnail} alt={product.title} className="w-100" />
-      <div className="mt-2">
+      <div className="my-2">
         <p className="">{product.description}</p>
         <span>Brand: {product.brand}</span>
         <span className="float-end">Price: ${product.price}</span>
@@ -36,6 +36,12 @@ const ProductDetails = () => {
           <span className="float-end">Rating: {product.rating}</span>
         </p>
       </div>
+      <div>
+        <button type="button" className="btn btn-success btn-lg w-100">
+          Add to Cart
+        </button>
+      </div>
+      <h3 className="mt-2">Product images</h3>
       <div className="other__img_container">
         {product?.images?.map((i, index) => (
           <img src={i} alt={"lp2nb2#" + index} className="other__img" />

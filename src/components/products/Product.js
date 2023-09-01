@@ -51,7 +51,7 @@ const Product = ({ product }) => {
       {!presentInCart && (
         <button
           id="btn_addtocart"
-          className="btn btn-primary btn-sm mb-3"
+          className="btn btn-success btn-sm mb-3"
           onClick={addToCart}
         >
           Add to cart

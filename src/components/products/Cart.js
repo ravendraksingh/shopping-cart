@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
 import ProductInCart from "./ProductInCart";
+import { Card, Row, Col } from "react-bootstrap";
 
 const Cart = () => {
   const cartCtx = useContext(CartContext);
   console.log("cartCtx", cartCtx);
   const { cart } = cartCtx;
+  const [itemTotal, setItemTotal] = useState(0);
+  const [deliveryChrg, setDeliveryChrg] = useState(10);
+  const [surgeChrg, setSurgeChrg] = useState(2);
 
   let cartWithUniqItems = [
     ...new Map(
@@ -17,6 +21,17 @@ const Cart = () => {
   ];
   cartWithUniqItems = cartWithUniqItems.sort((a, b) => a.id - b.id);
   console.log("cartWithUniqItems", cartWithUniqItems);
+
+  useEffect(() => {
+    if (cart) {
+      let _itemTotal = cart.reduce((sum, item) => sum + item.price, 0);
+      console.log("itemTotal", _itemTotal);
+      setItemTotal(_itemTotal);
+    }
+  }, [cart]);
+
+  let grandTotal = itemTotal + deliveryChrg + surgeChrg;
+  grandTotal = grandTotal.toFixed(2);
 
   //   const cart = [
   //     {
@@ -75,13 +90,37 @@ const Cart = () => {
 
   //   console.log(JSON.stringify(cart));
   return (
-    <div className="container mt-1">
+    <>
+      {(!cart || cart.length === 0) && <h1 className="text-danger">Cart is empty!</h1>}
       {cartWithUniqItems &&
         cartWithUniqItems?.length > 0 &&
         cartWithUniqItems.map((item, index) => (
           <ProductInCart product={item} key={"alj083y2_" + Math.random()} />
         ))}
-    </div>
+      {cart && cart.length > 0 && (
+        <Card>
+          <Card.Header className="fw-bold">Bill Details</Card.Header>
+          <Card.Body>
+            <Row>
+              <Col>Item total</Col>
+              <Col className="text-end">{itemTotal?.toFixed(2)}</Col>
+            </Row>
+            <Row>
+              <Col>Delivery charge</Col>
+              <Col className="text-end">{deliveryChrg?.toFixed(2)}</Col>
+            </Row>
+            <Row>
+              <Col>High demand surge charge</Col>
+              <Col className="text-end">{surgeChrg?.toFixed(2)}</Col>
+            </Row>
+            <Row className="fw-bold">
+              <Col>Grand total</Col>
+              <Col className="text-end">{grandTotal}</Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      )}
+    </>
   );
 };
 

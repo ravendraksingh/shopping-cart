@@ -34,7 +34,7 @@ const NewSideNav = (props) => {
 
       <div
         className="offcanvas offcanvas-start"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasSidenav"
         aria-labelledby="offcanvasSidenavLabel"
       >

@@ -43,7 +43,7 @@ const ProductInCart = ({ product }) => {
             <span className="ps-1 pe-2" onClick={removeFromCart}>
               -
             </span>
-            <span className="">{itemCount}</span>
+            {itemCount}
             <span className="ps-2 pe-1" onClick={addToCart}>
               +
             </span>
