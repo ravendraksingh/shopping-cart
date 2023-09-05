@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
+import { useInRouterContext } from "react-router-dom";
 import "./autocomplete.css";
 
 const AutoComplete = () => {
@@ -16,20 +17,26 @@ const AutoComplete = () => {
     return data.products;
   };
 
-  const handleSearch = async (e) => {
-    let userInput = e.target.value;
-    if (userInput && userInput.length < 3) {
-      setUserInput(userInput);
-      //   setShow(false);
-      //   setProducts([]);
+  useEffect(() => {
+    console.log("userInput", userInput);
+    if (userInput.length < 3) {
+      setProducts([]);
+    } else {
+      const getDataTimeoutId = setTimeout(() => {
+        fetch("https://dummyjson.com/products/search?q=" + userInput)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.products?.length > 0) {
+              setProducts(data.products);
+            }
+          });
+      }, 500);
+
+      return () => {
+        clearTimeout(getDataTimeoutId);
+      };
     }
-    if (userInput && userInput.length > 2) {
-      const products = await fetchProduct(userInput);
-      console.log("fetched products", products);
-      setProducts(products);
-      setShow(true);
-    }
-  };
+  }, [userInput]);
 
   const handleKeyDown = (e) => {
     console.log(e.keyCode);
@@ -44,40 +51,46 @@ const AutoComplete = () => {
     window.location.assign("/products/" + id);
   };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  //   console.log(activeProductId);
+  window.onclick = (e) => {
+    console.log("window clicked", e.target.id, show);
+    if (e.target.id === "searchmodal") {
+      setShow(false);
+    }
+  };
 
   return (
     <div className="d-flex flex-column flex-grow-1">
       <input
+        id="userInput"
         type="text"
-        className="form-control"
-        onChange={handleSearch}
+        className="form-control user__input"
+        onChange={(e) => setUserInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        // onClick={() => setShow(true)}
+        onClick={() => setShow(true)}
       />
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          {products && products.length > 0 && (
-            <div className="searchList">
-              <ul>
-                {products.map((product) => (
-                  <li
-                    className="listitem"
-                    id={`productid-${product.id}`}
-                    onClick={listItemClicked}
-                  >
-                    {`[${product.title}] `}
-                    {/* {`${product.description.substring(0, 50)}`} */}
-                    {`${product.description}`}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </Modal.Body>
-      </Modal>
+      {show && products && products.length > 0 && (
+        <div id="searchmodal" className="search__modal">
+          <div id="modalcontent" className="modal__content">
+            {products && products.length > 0 && (
+              <div className="searchList">
+                <ul>
+                  {products.map((product) => (
+                    <li
+                      className="listitem"
+                      id={`productid-${product.id}`}
+                      onClick={listItemClicked}
+                    >
+                      {`[${product.title}] `}
+                      {/* {`${product.description.substring(0, 50)}`} */}
+                      {`${product.description}`}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
