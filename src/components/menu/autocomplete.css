@@ -55,7 +55,8 @@
 .searchList a {
   text-decoration: none;
   color: #888;
-  font-weight: 400;
+  font-size: 0.75rem;
+  font-weight: 300;
 }
 .searchList li {
   font-weight: 400;
