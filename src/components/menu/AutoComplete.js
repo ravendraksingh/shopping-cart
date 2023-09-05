@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./autocomplete.css";
 
 const AutoComplete = () => {
@@ -42,7 +42,7 @@ const AutoComplete = () => {
     // setActiveProductId(id);
     // window.location.assign("/products/" + id);
     // navigate(`/products/${id}`);
-    window.location.assign(`/products/${id}`);
+    //window.location.assign(`/products/${id}`);
   };
 
   window.onclick = (e) => {
@@ -69,15 +69,17 @@ const AutoComplete = () => {
               <div className="searchList">
                 <ul>
                   {products.map((product) => (
-                    <li
-                      className="listitem"
-                      id={`productid-${product.id}`}
-                      onClick={listItemClicked}
-                    >
-                      {`[${product.title}] `}
-                      {/* {`${product.description.substring(0, 50)}`} */}
-                      {`${product.description}`}
-                    </li>
+                    <Link to={"/products/" + product.id} target="_parent">
+                      <li
+                        className="listitem"
+                        id={`productid-${product.id}`}
+                        onClick={listItemClicked}
+                      >
+                        {`[${product.title}] `}
+                        {/* {`${product.description.substring(0, 50)}`} */}
+                        {`${product.description}`}
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               </div>

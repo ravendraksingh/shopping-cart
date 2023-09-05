@@ -20,8 +20,8 @@
   margin-left: 4.2em;
   padding: 1em;
   border: 1px solid #888;
-  border-bottom-left-radius: .25em;
-  border-bottom-right-radius: .25em;
+  border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
   width: 80%;
 }
 .user__input {
@@ -48,6 +48,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.searchList a {
+  text-decoration: none;
+  color: #888;
+  font-weight: 400;
 }
 .searchList li {
   font-weight: 400;
