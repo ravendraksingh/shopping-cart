@@ -5,6 +5,7 @@
   /* width: 300px; */
   max-width: 500px;
   width: 100%;
+  padding: 1em 1em;
   box-shadow: 0px 0px 2px 2px rgb(220, 220, 220);
 }
 .other__img_container {
