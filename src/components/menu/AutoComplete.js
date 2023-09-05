@@ -40,7 +40,7 @@ const AutoComplete = () => {
     const prodid = e.target.id;
     const id = prodid.split("-")[1];
     // setActiveProductId(id);
-    window.location.assign("/products/" + id);
+    // window.location.assign("/products/" + id);
     // navigate(`/products/${id}`);
     //window.location.assign(`/products/${id}`);
   };
@@ -69,17 +69,17 @@ const AutoComplete = () => {
               <div className="searchList">
                 <ul>
                   {products.map((product) => (
-                    // <Link to={"/products/" + product.id} target="_top">
-                    <li
-                      className="listitem"
-                      id={`productid-${product.id}`}
-                      onClick={listItemClicked}
-                    >
-                      {`[${product.title}] `}
-                      {/* {`${product.description.substring(0, 50)}`} */}
-                      {`${product.description}`}
-                    </li>
-                    // </Link>
+                    <Link to={`/products/${product.id}`} target="_top">
+                      <li
+                        className="listitem"
+                        id={`productid-${product.id}`}
+                        onClick={listItemClicked}
+                      >
+                        {`[${product.title}] `}
+                        {/* {`${product.description.substring(0, 50)}`} */}
+                        {`${product.description}`}
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               </div>
