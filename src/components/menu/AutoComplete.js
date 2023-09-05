@@ -6,7 +6,7 @@ const AutoComplete = () => {
   const [show, setShow] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [products, setProducts] = useState([]);
-  const [activeProductId, setActiveProductId] = useState(-1);
+  //const [activeProductId, setActiveProductId] = useState(-1);
 
   useEffect(() => {
     console.log("userInput", userInput);
