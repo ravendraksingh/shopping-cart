@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Modal } from "react-bootstrap";
-import { useInRouterContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./autocomplete.css";
 
 const AutoComplete = () => {
@@ -8,14 +7,6 @@ const AutoComplete = () => {
   const [userInput, setUserInput] = useState("");
   const [products, setProducts] = useState([]);
   const [activeProductId, setActiveProductId] = useState(-1);
-
-  const fetchProduct = async (searchText) => {
-    const res = await fetch(
-      "https://dummyjson.com/products/search?q=" + searchText
-    );
-    const data = await res.json();
-    return data.products;
-  };
 
   useEffect(() => {
     console.log("userInput", userInput);
@@ -42,13 +33,16 @@ const AutoComplete = () => {
     console.log(e.keyCode);
   };
 
+  const navigate = useNavigate();
+
   const listItemClicked = (e) => {
-    console.log(e.target.id);
+    // console.log(e.target.id);
     const prodid = e.target.id;
     const id = prodid.split("-")[1];
 
     setActiveProductId(id);
-    window.location.assign("/products/" + id);
+    // window.location.assign("/products/" + id);
+    navigate("/products/" + id);
   };
 
   window.onclick = (e) => {
