@@ -69,7 +69,7 @@ const AutoComplete = () => {
               <div className="searchList">
                 <ul>
                   {products.map((product) => (
-                    <Link to={"/products/" + product.id} target="_parent">
+                    <Link to={"/products/" + product.id} target="_top">
                       <li
                         className="listitem"
                         id={`productid-${product.id}`}
