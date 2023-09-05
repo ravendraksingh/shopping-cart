@@ -40,20 +40,9 @@ const TopNav = () => {
   };
 
   return (
-    // <div className="navbar fixed-top px-3 py-2">
-    <div id="idtopnav" className="navbar px-3 py-2">
+    <div id="idtopnav" className="container navbar topnav">
       <NewSideNav />
       <AutoComplete />
-      {/* <div className="nav-item d-flex flex-grow-1">
-        <form className="d-flex flex-grow-1">
-          <input
-            className="form-control ms-3 me-2 w-100"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
-      </div> */}
     </div>
   );
 };

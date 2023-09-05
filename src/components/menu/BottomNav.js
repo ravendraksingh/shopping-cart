@@ -13,7 +13,8 @@ const BottomNav = () => {
   //   let cartCount = cart ? cart.reduce((sum, item) => sum + item.quantity, 0) : 0;
 
   return (
-    <div id="idbottomnav" className="navbar fixed-bottom px-3 py-2">
+    // <div id="idbottomnav" className="container navbar bottomnav fixed-bottom">
+    <div id="idbottomnav" className="container navbar bottomnav fixed-bottom">
       <div className="nav-item">
         <Link to="/">
           <AiOutlineHome color="white" size="24" />

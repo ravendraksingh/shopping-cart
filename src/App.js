@@ -7,13 +7,13 @@ import { Fragment } from "react";
 
 function App() {
   return (
-    <>
+    <div className="App container px-0">
       <TopNav />
-      <div className="content__container">
-        <AppRoutes />
-      </div>
+      {/* <div className="content__container"> */}
+      <AppRoutes />
+      {/* </div> */}
       <BottomNav />
-    </>
+    </div>
   );
 }
 

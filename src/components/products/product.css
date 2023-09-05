@@ -1,3 +1,6 @@
+.prod__dtls {
+  margin-bottom: 3em;  
+}
 .img__main {
   /* width: 300px; */
   max-width: 500px;
@@ -14,9 +17,17 @@
   margin-bottom: 1em;
   box-shadow: 0 0 2px 2px rgb(220, 220, 220);
 }
+.btn__add {
+    width: 100%;
+}
 
 @media screen and (max-width: 576px) {
   .other__img {
     width: 300px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  .btn__add {
+    width: 300px;
   }
 }

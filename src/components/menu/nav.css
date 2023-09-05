@@ -6,3 +6,9 @@
   background-color: #0a66c2;
   font-weight: bold;
 }
+.topnav {
+    margin-bottom: 1em;
+}
+.bottomnav {
+    /* margin-top: 3em; */
+}

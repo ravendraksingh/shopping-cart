@@ -25,7 +25,7 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <div className="container mt-1 fs-4">
+    <div className="container prod__dtls">
       <div className="text-center">
         <img
           src={product.thumbnail}
@@ -34,7 +34,7 @@ const ProductDetails = () => {
         />
       </div>
       <div className="my-2">
-        <p className="">{product.description}</p>
+        <p>{product.description}</p>
         <span>Brand: {product.brand}</span>
         <span className="float-end">Price: ${product.price}</span>
         <p>
@@ -42,10 +42,10 @@ const ProductDetails = () => {
           <span className="float-end">Rating: {product.rating}</span>
         </p>
       </div>
-      <div>
-        <button type="button" className="btn btn-success btn-lg w-100">
-          Add to Cart
-        </button>
+      <div className="text-center">
+      <button type="button" className="btn btn-success btn__add">
+        Add to Cart
+      </button>
       </div>
       <h3 className="mt-2">Product images</h3>
       <div className="other__img_container">
