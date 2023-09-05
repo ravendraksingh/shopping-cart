@@ -36,13 +36,13 @@ const AutoComplete = () => {
   const navigate = useNavigate();
 
   const listItemClicked = (e) => {
-    // console.log(e.target.id);
+    console.log("item clicked", e.target.id);
     const prodid = e.target.id;
     const id = prodid.split("-")[1];
-
-    setActiveProductId(id);
+    // setActiveProductId(id);
     // window.location.assign("/products/" + id);
-    navigate("/products/" + id);
+    // navigate(`/products/${id}`);
+    window.location.assign(`/products/${id}`);
   };
 
   window.onclick = (e) => {
