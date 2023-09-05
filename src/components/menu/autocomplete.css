@@ -1,0 +1,37 @@
+.searchList {
+  /* width: 100%; */
+  /* border: 1px solid rgb(220, 220, 220); */
+  /* border-radius: 0.5em; */
+  /* z-index: 2; */
+  /* background-color: #fff; */
+  color: grey;
+  /* position: absolute;
+  top: 3em;
+  left: 4em; */
+  /* padding: 1em; */
+  /* padding-top: 0; */
+  /* border-bottom-right-radius: .25em; */
+  /* border-bottom-left-radius: .25em; */
+  /* padding-right: 0; */
+  /* margin: 1em; */
+}
+.searchList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.searchList li {
+  font-weight: 400;
+}
+.searchList li:hover {
+  background-color: grey;
+  color: #fff;
+  cursor: pointer;
+}
+.listitem {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: pre-wrap;
+}

@@ -4,6 +4,7 @@ import SideNav from "./SideNav";
 import useWindowDimensions from "../../utils/ScreenUtil";
 import "./nav.css";
 import NewSideNav from "./NewSideNav";
+import AutoComplete from "./AutoComplete";
 
 const TopNav = () => {
   const { width: screenwidth } = useWindowDimensions();
@@ -41,17 +42,9 @@ const TopNav = () => {
   return (
     // <div className="navbar fixed-top px-3 py-2">
     <div id="idtopnav" className="navbar px-3 py-2">
-      {/* <div className="nav-item">
-        <SideNav sidebar={opensidebar} onCloseSideNav={closeSideNavHandler} />
-        <GiHamburgerMenu
-          size="32px"
-          className="hamburger"
-          onClick={openSideNavHandler}
-          color="white"
-        />
-      </div> */}
       <NewSideNav />
-      <div className="nav-item d-flex flex-grow-1">
+      <AutoComplete />
+      {/* <div className="nav-item d-flex flex-grow-1">
         <form className="d-flex flex-grow-1">
           <input
             className="form-control ms-3 me-2 w-100"
@@ -59,11 +52,8 @@ const TopNav = () => {
             placeholder="Search"
             aria-label="Search"
           />
-          {/* <button className="btn btn-outline-success" type="submit">
-            Search
-          </button> */}
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

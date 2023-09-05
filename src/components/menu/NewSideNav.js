@@ -21,7 +21,7 @@ const NewSideNav = (props) => {
   //   };
 
   return (
-    <Fragment>
+    <div className="">
       <button
         className="btn btn-primary sidenav__btn"
         type="button"
@@ -78,7 +78,7 @@ const NewSideNav = (props) => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
