@@ -65,7 +65,7 @@ const AutoComplete = () => {
       />
       {show && products && products.length > 0 && (
         <div id="searchmodal" className="search__modal">
-          <div id="modalcontent" className="modal__content">
+          <div id="modalcontent" className="container modal__content">
             {products && products.length > 0 && (
               <div className="searchList">
                 <ul>

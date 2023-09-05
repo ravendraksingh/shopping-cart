@@ -16,16 +16,20 @@
 /* Modal Content */
 .modal__content {
   background-color: #fefefe;
-  /* margin: auto; */
-  margin-left: 4.2em;
-  padding: 1em;
+  margin: auto;
+  /* margin-left: 0.5em; */
+  padding: 0.5em;
   border: 1px solid #888;
   border-bottom-left-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
-  width: 80%;
+  width: 100vw;
 }
 .user__input {
   z-index: 2;
+  border: 0;
+}
+.user__input:focus {
+  box-shadow: none;
 }
 .form-control::placeholder {
   color: rgba(0, 0, 0, 0.4);
@@ -77,5 +81,8 @@
 @media only screen and (min-width: 480px) {
   .searchList a {
     font-size: 1rem;
+  }
+  .modal__content {
+    /* max-width: 500px; */
   }
 }
