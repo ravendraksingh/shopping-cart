@@ -27,6 +27,9 @@
 .user__input {
   z-index: 2;
 }
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
 .searchList {
   /* width: 100%; */
   /* border: 1px solid rgb(220, 220, 220); */

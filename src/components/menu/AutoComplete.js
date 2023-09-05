@@ -58,6 +58,7 @@ const AutoComplete = () => {
         id="userInput"
         type="text"
         className="form-control user__input"
+        placeholder="Search product (type min 3 chars)"
         onChange={(e) => setUserInput(e.target.value)}
         onKeyDown={handleKeyDown}
         onClick={() => setShow(true)}
