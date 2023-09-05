@@ -26,7 +26,8 @@ const ProductDetails = () => {
 
   return (
     <div className="container mt-1 fs-4">
-      <img src={product.thumbnail} alt={product.title} className="w-100" />
+        <div className="text-center">
+      <img src={product.thumbnail} alt={product.title} className="img__main" /></div>
       <div className="my-2">
         <p className="">{product.description}</p>
         <span>Brand: {product.brand}</span>

@@ -1,11 +1,22 @@
+.img__main {
+  /* width: 300px; */
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0px 0px 3px 3px #888;
+}
 .other__img_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .other__img {
-  height: 100px;
-  aspect-ratio: 16/9;
+  width: calc(min(300px, 90vw));
   margin-bottom: 1em;
-  /* margin: 0 1em 1em 0; */
+  box-shadow: 0 0 2px 2px rgb(220, 220, 220);
+}
+
+@media screen and (max-width: 576px) {
+  .other__img {
+    width: 300px !important;
+  }
 }
