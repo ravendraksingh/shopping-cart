@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./product.css";
+import CartContext from "../../context/CartContext";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
+  const [presentInCart, setPresentInCart] = useState(false);
+  const cartCtx = useContext(CartContext);
+  const { cart } = cartCtx;
+
   console.log("id", id);
 
   const fetchProduct = async () => {
@@ -23,6 +28,20 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProduct();
   }, []);
+
+  const addToCart = () => {
+    console.log("addtocart");
+    cartCtx.dispatch({
+      type: "ADD_ITEM",
+      item: product,
+    });
+    setPresentInCart(true);
+  };
+
+  const removeFromCart = () => {
+    console.log("removeFromCart");
+    setPresentInCart(false);
+  };
 
   return (
     <div className="container prod__dtls">
@@ -43,9 +62,24 @@ const ProductDetails = () => {
         </p>
       </div>
       <div className="text-center">
-      <button type="button" className="btn btn-success btn__add">
-        Add to Cart
-      </button>
+        {!presentInCart && (
+          <button
+            type="button"
+            className="btn btn-success btn__add"
+            onClick={addToCart}
+          >
+            Add to Cart
+          </button>
+        )}
+        {presentInCart && (
+          <button
+            type="button"
+            className="btn btn-danger btn__add"
+            onClick={removeFromCart}
+          >
+            Remove from Cart
+          </button>
+        )}
       </div>
       <h3 className="mt-2">Product images</h3>
       <div className="other__img_container">

@@ -28,7 +28,7 @@ const ProductInCart = ({ product }) => {
 
   return (
     <div className="prod__incart">
-      <div>
+      <div className="ms-2">
         <img
           src={product.thumbnail}
           alt={product.title}
