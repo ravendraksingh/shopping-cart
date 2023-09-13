@@ -9,7 +9,7 @@ const AutoComplete = () => {
   //const [activeProductId, setActiveProductId] = useState(-1);
 
   useEffect(() => {
-    console.log("userInput", userInput);
+    // console.log("userInput", userInput);
     if (userInput.length < 3) {
       setProducts([]);
     } else {
@@ -46,7 +46,7 @@ const AutoComplete = () => {
   };
 
   window.onclick = (e) => {
-    console.log("window clicked", e.target.id, show);
+    // console.log("window clicked", e.target.id, show);
     if (e.target.id === "searchmodal") {
       setShow(false);
     }

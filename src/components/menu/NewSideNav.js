@@ -27,6 +27,7 @@ const NewSideNav = (props) => {
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasSidenav"
+        data-bs-theme="dark"
         aria-controls="offcanvasSidenav"
       >
         <GiHamburgerMenu size="24px" className="hamburger" color="white" />
@@ -59,14 +60,6 @@ const NewSideNav = (props) => {
             >
               Home
             </Nav.Link>
-            {/* <Nav.Link
-              as={Link}
-              to="/products"
-              className="navlink"
-              data-bs-dismiss="offcanvas"
-            >
-              Products
-            </Nav.Link> */}
             <Nav.Link
               as={Link}
               to="/cart"
@@ -74,6 +67,22 @@ const NewSideNav = (props) => {
               data-bs-dismiss="offcanvas"
             >
               Cart
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/login"
+              className="navlink"
+              data-bs-dismiss="offcanvas"
+            >
+              Login
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/logout"
+              className="navlink"
+              data-bs-dismiss="offcanvas"
+            >
+              Logout
             </Nav.Link>
           </div>
         </div>

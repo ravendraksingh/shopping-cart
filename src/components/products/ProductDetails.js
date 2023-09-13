@@ -53,7 +53,7 @@ const ProductDetails = () => {
         />
       </div>
       <div className="my-2">
-        <p>{product.description}</p>
+        <p className="text">{product.description}</p>
         <span>Brand: {product.brand}</span>
         <span className="float-end">Price: ${product.price}</span>
         <p>

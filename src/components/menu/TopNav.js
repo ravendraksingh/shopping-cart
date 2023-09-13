@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import SideNav from "./SideNav";
-import useWindowDimensions from "../../utils/ScreenUtil";
+import { useWindowDimensions } from "../../utils/ScreenUtil";
 import "./nav.css";
-import NewSideNav from "./NewSideNav";
 import AutoComplete from "./AutoComplete";
 
 const TopNav = () => {
@@ -40,8 +37,8 @@ const TopNav = () => {
   };
 
   return (
-    <div id="idtopnav" className="container navbar topnav">
-      <NewSideNav />
+    <div id="idtopnav" className="container navbar">
+      {/* <NewSideNav /> */}
       <AutoComplete />
     </div>
   );

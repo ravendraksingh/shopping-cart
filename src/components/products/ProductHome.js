@@ -7,7 +7,7 @@ import "../styles.css";
 const ProductHome = () => {
   const [products, setProducts] = useState([]);
   const cartCtx = useContext(CartContext);
-  console.log("cartCtx", cartCtx);
+//   console.log("cartCtx", cartCtx);
 
   const fetchProducts = async () => {
     try {

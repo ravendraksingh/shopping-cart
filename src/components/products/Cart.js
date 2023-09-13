@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
 import ProductInCart from "./ProductInCart";
 import { Card, Row, Col } from "react-bootstrap";
+import UserContext from "../../context/UserContext";
 
 const Cart = () => {
   const cartCtx = useContext(CartContext);
@@ -10,6 +11,9 @@ const Cart = () => {
   const [itemTotal, setItemTotal] = useState(0);
   const [deliveryChrg, setDeliveryChrg] = useState(10);
   const [surgeChrg, setSurgeChrg] = useState(2);
+
+  const user = useContext(UserContext);
+  console.log("user", user);
 
   let cartWithUniqItems = [
     ...new Map(
@@ -32,6 +36,10 @@ const Cart = () => {
 
   let grandTotal = itemTotal + deliveryChrg + surgeChrg;
   grandTotal = grandTotal.toFixed(2);
+
+  window.onbeforeunload = () => {
+    alert("are you sure");
+  };
 
   //   const cart = [
   //     {
@@ -91,7 +99,9 @@ const Cart = () => {
   //   console.log(JSON.stringify(cart));
   return (
     <>
-      {(!cart || cart.length === 0) && <h1 className="text-danger">Cart is empty!</h1>}
+      {(!cart || cart.length === 0) && (
+        <h1 className="text-danger">Cart is empty!</h1>
+      )}
       {cartWithUniqItems &&
         cartWithUniqItems?.length > 0 &&
         cartWithUniqItems.map((item, index) => (
@@ -115,7 +125,7 @@ const Cart = () => {
             </Row>
             <Row className="fw-bold">
               <Col>Grand total</Col>
-              <Col className="text-end">{grandTotal}</Col>
+              <Col className="text-end">${grandTotal}</Col>
             </Row>
           </Card.Body>
         </Card>
