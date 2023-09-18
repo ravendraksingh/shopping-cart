@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #0a66c2;
+  /* background-color: #0a66c2; */
+  background-color: #2a3a8d;
   font-weight: bold;
 }
 .topnav {

@@ -38,7 +38,11 @@ const Product = ({ product }) => {
     <Card className="product__card">
       <Card.Body className="p-0">
         <Link to={"/products/" + product.id}>
-          <img src={product.thumbnail} className="product__img" />
+          <img
+            src={product.thumbnail}
+            className="product__img"
+            loading="lazy"
+          />
         </Link>
         <div className="d-flex justify-content-between px-0 py-2">
           <span className="mb-0">{product.title}</span>

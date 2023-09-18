@@ -10,6 +10,9 @@ function App() {
   const [user, setUser] = useState();
   var winheight, docheight, trackLength, throttlescroll;
 
+  const locale = navigator.language;
+  console.log("locale", locale);
+
   useEffect(() => {
     const userInStorage = localStorage.getItem("user");
     if (userInStorage) {
