@@ -3,17 +3,25 @@ import CartContext from "../../context/CartContext";
 import ProductInCart from "./ProductInCart";
 import { Card, Row, Col } from "react-bootstrap";
 import UserContext from "../../context/UserContext";
+import "./cart.css";
 
 const Cart = () => {
   const cartCtx = useContext(CartContext);
   console.log("cartCtx", cartCtx);
-  const { cart } = cartCtx;
+  //   const { cart } = cartCtx;
+  const [cart, setCart] = useState([]);
   const [itemTotal, setItemTotal] = useState(0);
   const [deliveryChrg, setDeliveryChrg] = useState(10);
   const [surgeChrg, setSurgeChrg] = useState(2);
 
   const user = useContext(UserContext);
   console.log("user", user);
+
+  useEffect(() => {
+    if (cartCtx && cartCtx.cart?.length > 0) {
+      setCart(cartCtx.cart);
+    }
+  }, [cartCtx.cart]);
 
   let cartWithUniqItems = [
     ...new Map(
@@ -24,6 +32,7 @@ const Cart = () => {
     ).values(),
   ];
   cartWithUniqItems = cartWithUniqItems.sort((a, b) => a.id - b.id);
+  //   cartWithUniqItems = cart.sort((a, b) => a.id - b.id);
   console.log("cartWithUniqItems", cartWithUniqItems);
 
   useEffect(() => {
@@ -102,13 +111,17 @@ const Cart = () => {
       {(!cart || cart.length === 0) && (
         <h1 className="text-danger">Cart is empty!</h1>
       )}
-      {cartWithUniqItems &&
-        cartWithUniqItems?.length > 0 &&
-        cartWithUniqItems.map((item, index) => (
-          <ProductInCart product={item} key={"alj083y2_" + Math.random()} />
-        ))}
+      {
+        cartWithUniqItems &&
+          cartWithUniqItems?.length > 0 &&
+          // <div className="product__list">
+          cartWithUniqItems.map((item, index) => (
+            <ProductInCart product={item} key={"alj083y2_" + Math.random()} />
+          ))
+        // </div>
+      }
       {cart && cart.length > 0 && (
-        <Card>
+        <Card className="mb-2">
           <Card.Header className="fw-bold">Bill Details</Card.Header>
           <Card.Body>
             <Row>
@@ -129,6 +142,17 @@ const Cart = () => {
             </Row>
           </Card.Body>
         </Card>
+      )}
+      {cart && cart?.length > 0 && (
+        <div className="buybtn__container text-center">
+          {/* <span>
+            Subtotal <strong>${itemTotal?.toFixed(2)}</strong>
+          </span> */}
+          <button
+            type="button"
+            className="btn btn-warning mb-2 btn__buy"
+          >{`Proceed to buy (${cart.length} items)`}</button>
+        </div>
       )}
     </>
   );

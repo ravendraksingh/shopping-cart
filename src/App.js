@@ -92,7 +92,7 @@ function App() {
     <div className="App container px-0">
       <UserContext.Provider value={{ user, setUser }}>
         <TopNav />
-        <section id="maincontent" className="px-2 px-sm-0">
+        <section id="maincontent" className="px-2 px-sm-0 pt-2">
           <AppRoutes />
         </section>
         <BottomNav />

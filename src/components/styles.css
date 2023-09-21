@@ -37,28 +37,8 @@
 .main__header .a {
   color: white;
 }
-.cart__img {
-  width: 6em;
-  height: 6em;
-  border-radius: 1em;
-}
-.prod__incart {
-  display: flex;
-  flex: 1;
-  min-width: 380px;
-  border-bottom: 1px solid rgb(220, 220, 220);
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
-.cart__tool {
-  border: 1px solid rgb(220, 220, 220);
-  padding: 2px 6px;
-  background-color: #0d7c0d;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 1.25em;
-  float: end;
-}
+
+
 
 @media only screen and (min-width: 576px) {
   .product__grid-container {

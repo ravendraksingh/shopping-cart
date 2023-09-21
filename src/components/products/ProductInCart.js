@@ -19,9 +19,9 @@ const ProductInCart = ({ product }) => {
     });
   };
 
-  const removeFromCart = () => {
+  const reduceQuantity = () => {
     cartCtx.dispatch({
-      type: "REMOVE_ITEM",
+      type: "REDUCE_QTY",
       item: product,
     });
   };
@@ -40,7 +40,7 @@ const ProductInCart = ({ product }) => {
         <div>
           <span className="px-0 py-0">{"$" + product.price}</span>
           <span className="cart__tool float-end me-3">
-            <span className="ps-1 pe-2" onClick={removeFromCart}>
+            <span className="ps-1 pe-2" onClick={reduceQuantity}>
               -
             </span>
             {itemCount}

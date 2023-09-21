@@ -1,10 +1,10 @@
 .App {
   min-width: 320px;
   /* position: relative; */
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
-  max-width: 420px;
+  max-width: 420px; */
 }
 .App-logo {
   height: 40vmin;

@@ -58,6 +58,9 @@
 .offcanvas a {
   color: #fff !important;
 }
+.offcanvas a:hover {
+  font-weight: bold;
+}
 
 /* @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

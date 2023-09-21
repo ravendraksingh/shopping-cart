@@ -31,11 +31,16 @@ const Product = ({ product }) => {
 
   const removeFromCart = () => {
     console.log("removeFromCart");
+    cartCtx.dispatch({
+      type: "REMOVE_ITEM",
+      item: product,
+    });
+    setPresentInCart(false);
   };
 
   return (
     // <Card className="product__card col-12 col-sm-6 col-md-4">
-    <Card className="product__card">
+    <Card id="idprodcard" className="product__card">
       <Card.Body className="p-0">
         <Link to={"/products/" + product.id}>
           <img
