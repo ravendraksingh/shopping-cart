@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useWindowDimensions } from "../../utils/ScreenUtil";
-import "./nav.css";
+import NewSideNav from "./NewSideNav";
 import AutoComplete from "./AutoComplete";
+import CartButton from "./CartButton";
+import "./nav.css";
 
 const TopNav = () => {
   const { width: screenwidth } = useWindowDimensions();
@@ -37,9 +39,10 @@ const TopNav = () => {
   };
 
   return (
-    <div id="idtopnav" className="container navbar">
-      {/* <NewSideNav /> */}
+    <div id="idtopnav" className="navbar topnav">
+      <NewSideNav />
       <AutoComplete />
+      <CartButton />
     </div>
   );
 };

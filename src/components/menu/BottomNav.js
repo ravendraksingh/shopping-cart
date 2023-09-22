@@ -20,11 +20,11 @@ const BottomNav = () => {
   //   const showLogoutHandler = () => {};
 
   return (
-    // <div id="idbottomnav" className="container navbar bottomnav">
-    <div
-      id="idbottomnav"
-      className="d-md-none container navbar bottomnav fixed-bottom"
-    >
+    <div id="idbottomnav" className="navbar bottomnav">
+      {/* <div
+       id="idbottomnav"
+       className="d-md-none container navbar bottomnav fixed-bottom"
+     > */}
       <div className="nav-item">
         <Link to="/">
           <AiOutlineHome color="white" size="24" />

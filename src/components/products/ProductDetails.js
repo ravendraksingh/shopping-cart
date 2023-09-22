@@ -84,7 +84,12 @@ const ProductDetails = () => {
       <h3 className="mt-2">Product images</h3>
       <div className="other__img_container">
         {product?.images?.map((i, index) => (
-          <img src={i} alt={"lp2nb2#" + index} className="other__img" />
+          <img
+            src={i}
+            alt={"lp2nb2#" + index}
+            className="other__img"
+            loading="lazy"
+          />
         ))}
       </div>
     </div>

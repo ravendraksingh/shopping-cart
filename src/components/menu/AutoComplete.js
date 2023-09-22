@@ -53,7 +53,7 @@ const AutoComplete = () => {
   };
 
   return (
-    <div className="d-flex flex-column flex-grow-1">
+    <div className="d-flex flex-column w-50">
       <input
         id="userInput"
         type="text"

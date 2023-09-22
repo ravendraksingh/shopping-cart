@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import TopNav from "./components/menu/TopNav";
 import BottomNav from "./components/menu/BottomNav";
 import AppRoutes from "./components/AppRoutes";
@@ -10,8 +10,42 @@ function App() {
   const [user, setUser] = useState();
   var winheight, docheight, trackLength, throttlescroll;
 
+  const UA = navigator.userAgent;
   const locale = navigator.language;
-  console.log("locale", locale);
+    console.log("User Agent:", UA);
+  //   console.log("maxTouchPoints", maxTouchPoints);
+  //   console.log("locale:", locale);
+
+  function mobileDeviceDetection() {
+    let hasTouchScreen = false;
+    if ("maxTouchPoints" in navigator) {
+      hasTouchScreen = navigator.maxTouchPoints > 0;
+    } else if ("msMaxTouchPoints" in navigator) {
+      hasTouchScreen = navigator.msMaxTouchPoints > 0;
+    } else {
+      const mQ = matchMedia?.("(pointer:coarse)");
+      if (mQ?.media === "(pointer:coarse)") {
+        hasTouchScreen = !!mQ.matches;
+      } else if ("orientation" in window) {
+        hasTouchScreen = true; // deprecated, but good fallback
+      } else {
+        // Only as a last resort, fall back to user agent sniffing
+        const UA = navigator.userAgent;
+        hasTouchScreen =
+          /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+          /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA);
+      }
+    }
+
+    if (hasTouchScreen) {
+      //   document.getElementById("exampleButton").style.padding = "1em";
+      console.log("It's a mobile device");
+    } else {
+        console.log("NOT a mobile device");
+    }
+  }
+
+  mobileDeviceDetection();
 
   useEffect(() => {
     const userInStorage = localStorage.getItem("user");
@@ -89,15 +123,15 @@ function App() {
   };
 
   return (
-    <div className="App container px-0">
+    <Fragment>
       <UserContext.Provider value={{ user, setUser }}>
         <TopNav />
-        <section id="maincontent" className="px-2 px-sm-0 pt-2">
+        <section id="maincontent" className="px-2 px-sm-0 pb-3">
           <AppRoutes />
         </section>
-        <BottomNav />
+        {/* <BottomNav /> */}
       </UserContext.Provider>
-    </div>
+    </Fragment>
   );
 }
 

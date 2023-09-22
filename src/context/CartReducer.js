@@ -14,6 +14,7 @@ const CartReducer = (cart, action) => {
       return newCart;
     case "REMOVE_ITEM":
       if (cart === null || cart.length === 0) {
+        return [...cart];
       } else {
         // newCart = [...cart];
         // const productIndex = newCart.findIndex((c) => c.id === action.item.id);

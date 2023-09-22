@@ -21,7 +21,7 @@ const NewSideNav = (props) => {
   //   };
 
   return (
-    <div className="">
+    <div className="sidenav__box">
       <button
         className="btn btn-primary sidenav__btn"
         type="button"

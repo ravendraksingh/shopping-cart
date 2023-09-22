@@ -1,3 +1,5 @@
+.sidenav__box {
+}
 .sidenav {
   height: 100%;
   width: 0;
@@ -7,7 +9,7 @@
   left: 0;
   /* background-color: #343a40 !important; */
   /* background-color: #3700be; */
-  background-color: #0a66c2;
+  background-color: var(--dark-blue);
   overflow-x: hidden;
   transition: 0.5s ease-out;
   padding-top: 20px;
@@ -23,15 +25,13 @@
 }
 .sidenav a:hover {
   color: #f1f1f1;
-  background-color: blue;
+  background-color: var(--dark-blue);
 }
-
 .sidenav .closebtn {
   font-size: 36px;
   color: white;
   text-decoration: none;
 }
-
 .navicon {
   /* margin-left: 2rem; */
   font-size: 2rem;
@@ -42,17 +42,24 @@
   align-items: center;
   background-color: yellowgreen;
 }
-
-.sidenav__btn,
+.sidenav__btn {
+  padding: 0.25em;
+  margin-right: 0.5em;
+  background-color: var(--very-dark-blue) !important;
+  border-color: var(--very-dark-blue) !important;
+  box-shadow: none !important;
+}
+/* .sidenav__btn,
 .sidenav__btn::before,
 .sidenav::after {
-  background-color: #0a66c2 !important;
-  border-color: #0a66c2 !important;
-}
+  background-color: var(--very-dark-blue) !important;
+  border-color: var(--very-dark-blue) !important;
+  box-shadow: none;
+} */
 
 .offcanvas {
   max-width: 60% !important;
-  background-color: #0a66c2 !important;
+  background-color: var(--dark-blue) !important;
   color: #fff;
 }
 .offcanvas a {

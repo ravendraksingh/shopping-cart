@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import CartContext from "../../context/CartContext";
 import RatingStars from "../UI/RatingStars";
 import { Link } from "react-router-dom";
+import "./product.css";
 
 const Product = ({ product }) => {
   const cartCtx = useContext(CartContext);
@@ -40,27 +41,26 @@ const Product = ({ product }) => {
 
   return (
     // <Card className="product__card col-12 col-sm-6 col-md-4">
-    <Card id="idprodcard" className="product__card">
-      <Card.Body className="p-0">
-        <Link to={"/products/" + product.id}>
-          <img
-            src={product.thumbnail}
-            className="product__img"
-            loading="lazy"
-          />
-        </Link>
-        <div className="d-flex justify-content-between px-0 py-2">
-          <span className="mb-0">{product.title}</span>
-          <div>
-            <RatingStars rating={product.rating} />
-          </div>
-          <span className="px-0 py-0">{"$" + product.price}</span>
+    <Card>
+      <Link to={"/products/" + product.id}>
+        <img
+          src={product.thumbnail}
+          className="product__img"
+          // loading="lazy"
+        />
+      </Link>
+      <div className="d-flex justify-content-between px-2 py-2">
+        <span className="mb-0">{product.title}</span>
+        <div>
+          <RatingStars rating={product.rating} />
         </div>
-      </Card.Body>
+        <span className="px-0 py-0">{"$" + product.price}</span>
+      </div>
+
       {!presentInCart && (
         <button
           id="btn_addtocart"
-          className="btn btn-success btn-sm mb-3"
+          className="btn btn-success btn-sm mb-3 mx-2"
           onClick={addToCart}
         >
           Add to cart
