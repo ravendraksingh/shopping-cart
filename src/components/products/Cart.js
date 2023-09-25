@@ -107,7 +107,7 @@ const Cart = () => {
 
   //   console.log(JSON.stringify(cart));
   return (
-    <>
+    <div className="container cart__container">
       {(!cart || cart.length === 0) && (
         <h1 className="text-danger">Cart is empty!</h1>
       )}
@@ -154,7 +154,7 @@ const Cart = () => {
           >{`Proceed to buy (${cart.length} items)`}</button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

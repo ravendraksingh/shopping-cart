@@ -1,3 +1,7 @@
+.cart__container {
+  min-height: var(--w320);
+  max-width: var(--w600);
+}
 .buybtn__container {
   position: relative;
 }

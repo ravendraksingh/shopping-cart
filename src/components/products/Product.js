@@ -41,7 +41,7 @@ const Product = ({ product }) => {
 
   return (
     // <Card className="product__card col-12 col-sm-6 col-md-4">
-    <Card>
+    <div className="card product__card">
       <Link to={"/products/" + product.id}>
         <img
           src={product.thumbnail}
@@ -60,7 +60,7 @@ const Product = ({ product }) => {
       {!presentInCart && (
         <button
           id="btn_addtocart"
-          className="btn btn-success btn-sm mb-3 mx-2"
+          className="btn btn-success btn-sm mx-2 mb-2"
           onClick={addToCart}
         >
           Add to cart
@@ -69,13 +69,13 @@ const Product = ({ product }) => {
       {presentInCart && (
         <button
           id="btn_removefromcart"
-          className="btn btn-danger btn-sm mb-3"
+          className="btn btn-danger btn-sm mx-2 mb-2"
           onClick={removeFromCart}
         >
           Remove from cart
         </button>
       )}
-    </Card>
+    </div>
   );
 };
 

@@ -2,6 +2,11 @@
   font-size: 16px;
   --very-dark-blue: #2a3a8d;
   --dark-blue: #0a66c2;
+  --w180: 180px;
+  --w320: 320px;
+  --w480: 480px;
+  --w300: 300px;
+  --w600: 600px;
 }
 body {
   margin: 0;

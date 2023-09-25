@@ -12,7 +12,7 @@ function App() {
 
   const UA = navigator.userAgent;
   const locale = navigator.language;
-    console.log("User Agent:", UA);
+  console.log("User Agent:", UA);
   //   console.log("maxTouchPoints", maxTouchPoints);
   //   console.log("locale:", locale);
 
@@ -41,7 +41,7 @@ function App() {
       //   document.getElementById("exampleButton").style.padding = "1em";
       console.log("It's a mobile device");
     } else {
-        console.log("NOT a mobile device");
+      console.log("NOT a mobile device");
     }
   }
 
@@ -126,9 +126,7 @@ function App() {
     <Fragment>
       <UserContext.Provider value={{ user, setUser }}>
         <TopNav />
-        <section id="maincontent" className="px-2 px-sm-0 pb-3">
-          <AppRoutes />
-        </section>
+        <AppRoutes />
         {/* <BottomNav /> */}
       </UserContext.Provider>
     </Fragment>

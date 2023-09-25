@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
 import Product from "./Product";
 
@@ -7,7 +7,7 @@ import "../styles.css";
 const ProductHome = () => {
   const [products, setProducts] = useState([]);
   const cartCtx = useContext(CartContext);
-//   console.log("cartCtx", cartCtx);
+  //   console.log("cartCtx", cartCtx);
 
   const fetchProducts = async () => {
     try {
@@ -27,7 +27,7 @@ const ProductHome = () => {
   }, []);
 
   return (
-    <div className="product__grid-container">
+    <div className="container product__grid-container">
       {products &&
         products.length > 0 &&
         products.map((p, index) => (
