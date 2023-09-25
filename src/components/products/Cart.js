@@ -6,22 +6,9 @@ import UserContext from "../../context/UserContext";
 import "./cart.css";
 
 const Cart = () => {
-  const cartCtx = useContext(CartContext);
-  console.log("cartCtx", cartCtx);
-  //   const { cart } = cartCtx;
-  const [cart, setCart] = useState([]);
-  const [itemTotal, setItemTotal] = useState(0);
-  const [deliveryChrg, setDeliveryChrg] = useState(10);
-  const [surgeChrg, setSurgeChrg] = useState(2);
-
+  const { cart } = useContext(CartContext);
   const user = useContext(UserContext);
   console.log("user", user);
-
-  useEffect(() => {
-    if (cartCtx && cartCtx.cart?.length > 0) {
-      setCart(cartCtx.cart);
-    }
-  }, [cartCtx.cart]);
 
   let cartWithUniqItems = [
     ...new Map(
@@ -35,21 +22,26 @@ const Cart = () => {
   //   cartWithUniqItems = cart.sort((a, b) => a.id - b.id);
   console.log("cartWithUniqItems", cartWithUniqItems);
 
-  useEffect(() => {
+  function getItemTotal() {
+    let _itemTotal = 0;
     if (cart) {
-      let _itemTotal = cart.reduce((sum, item) => sum + item.price, 0);
-      console.log("itemTotal", _itemTotal);
-      setItemTotal(_itemTotal);
+      _itemTotal = cart.reduce((sum, item) => sum + item.price, 0);
     }
-  }, [cart]);
+    console.log("itemTotal", _itemTotal);
+    return _itemTotal;
+  }
 
-  let grandTotal = itemTotal + deliveryChrg + surgeChrg;
-  grandTotal = grandTotal.toFixed(2);
+  function getGrandTotal() {
+    let gt = 0;
+    gt = getItemTotal();
+    return gt;
+  }
 
   window.onbeforeunload = () => {
     alert("are you sure");
   };
 
+  console.log("in Cart.js", cart);
   //   const cart = [
   //     {
   //       id: 2,
@@ -112,8 +104,8 @@ const Cart = () => {
         <h1 className="text-danger">Cart is empty!</h1>
       )}
       {
-        cartWithUniqItems &&
-          cartWithUniqItems?.length > 0 &&
+        cart &&
+          cart?.length > 0 &&
           // <div className="product__list">
           cartWithUniqItems.map((item, index) => (
             <ProductInCart product={item} key={"alj083y2_" + Math.random()} />
@@ -126,19 +118,19 @@ const Cart = () => {
           <Card.Body>
             <Row>
               <Col>Item total</Col>
-              <Col className="text-end">{itemTotal?.toFixed(2)}</Col>
+              <Col className="text-end">{getItemTotal().toFixed(2)}</Col>
             </Row>
             <Row>
               <Col>Delivery charge</Col>
-              <Col className="text-end">{deliveryChrg?.toFixed(2)}</Col>
+              <Col className="text-end">{0.0}</Col>
             </Row>
             <Row>
               <Col>High demand surge charge</Col>
-              <Col className="text-end">{surgeChrg?.toFixed(2)}</Col>
+              <Col className="text-end">{0.0}</Col>
             </Row>
             <Row className="fw-bold">
               <Col>Grand total</Col>
-              <Col className="text-end">${grandTotal}</Col>
+              <Col className="text-end">${getGrandTotal().toFixed(2)}</Col>
             </Row>
           </Card.Body>
         </Card>
