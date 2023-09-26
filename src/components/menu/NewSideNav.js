@@ -76,14 +76,14 @@ const NewSideNav = (props) => {
             >
               Login
             </Nav.Link>
-            <Nav.Link
+            {/* <Nav.Link
               as={Link}
               to="/logout"
               className="navlink"
               data-bs-dismiss="offcanvas"
             >
               Logout
-            </Nav.Link>
+            </Nav.Link> */}
           </div>
         </div>
       </div>

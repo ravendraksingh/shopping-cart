@@ -6,6 +6,7 @@ import UserContext from "./context/UserContext";
 
 import "./App.css";
 import { getDocHeight } from "./utils/ScreenUtil";
+import NewTopNav from "./components/menu/NewTopNav";
 function App() {
   const [user, setUser] = useState();
   var winheight, docheight, trackLength, throttlescroll;
@@ -126,6 +127,7 @@ function App() {
     <Fragment>
       <UserContext.Provider value={{ user, setUser }}>
         <TopNav />
+        {/* <NewTopNav /> */}
         <AppRoutes />
         {/* <BottomNav /> */}
       </UserContext.Provider>

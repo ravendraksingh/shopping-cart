@@ -43,11 +43,19 @@ export function getShippingAddressAsText(shippingAddressJson) {
 }
 
 function randomString(length, chars) {
-    var result = '';
-    for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-    return result;
+  var result = "";
+  for (var i = length; i > 0; --i)
+    result += chars[Math.round(Math.random() * (chars.length - 1))];
+  return result;
 }
 
 export function getAlphaNumTxnId(length) {
-    return randomString(length, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  return randomString(
+    length,
+    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  );
+}
+
+export function Capitalize(stringValue) {
+  return stringValue.charAt(0).toUpperCase() + stringValue.slice(1);
 }

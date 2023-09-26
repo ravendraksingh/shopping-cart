@@ -23,15 +23,18 @@
 @media only screen and (min-width: 576px) {
   .pdtls__container {
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .prod__dtls {
   }
   .more__img-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex: .5;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-top: 0;
   }
   .img2 {
     max-width: var(--w180)
